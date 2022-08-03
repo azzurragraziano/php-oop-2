@@ -2,16 +2,17 @@
     require_once __DIR__ . '/products.php';
 
     class Food extends AnimalProducts {
-        //override
-        public $animal;
 
         public $type;
         public $brand;
         public $quantity;
 
-        public function __construct($_type, $_animal) {
-            $this->type = $_type;
+        //override
+        public function __construct($_animal, $_price, $_type, $_quantity) {
             $this->animal = $_animal;
+            $this->price = $_price;
+            $this->type = $_type;
+            $this->quantity = $_quantity;
         }
     }
 ?>

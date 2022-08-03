@@ -4,18 +4,12 @@
         public $lastname;
         public $mail; 
         public $discount;
-        public $isLogged;
         protected $shoppingBag = [];
 
-        public function __construct($_name, $_lastname, $_mail, $isLogged) {
+        public function __construct($_name, $_lastname, $_mail) {
             $this->name = $_name;
             $this->lastname = $_lastname;
             $this->mail = $_mail;
-            $this->isLogged = $_isLogged;
-
-            if($_isLogged) {
-                $this->discount = 20;
-            }
         }
 
         public function addProduct($product) {
@@ -37,5 +31,16 @@
 
             return $totalPrice;
         }
+
+        // public function payment() {
+        //     $amountDue = $this->getTotalPrice();
+        //     var_dump($amountDue);
+
+        //     if($this->saldo > $amountDue) {
+        //         throw new Exception('saldo non disponibile');
+        //     } else {
+        //         return 'transazione effettuata con successo';
+        //     }
+        // }
     }
 ?>
